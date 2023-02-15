@@ -109,8 +109,6 @@ for url in urls:
 
 driver.quit()
 
-#load data into a DataFrame object:
-
 if(len(documents)>0):
   collection.insert_many(documents)
   print('Uploaded')
