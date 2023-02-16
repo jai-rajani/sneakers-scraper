@@ -29,13 +29,13 @@ product_url=[]
 product_price=[]
 image_url=[]
 documents=[]
-scroll_pause_time = 4
+scroll_pause_time = 3
 
 
 #mongdb
 client = pymongo.MongoClient("mongodb+srv://jairajani:jairajani@shopwise.6twmxrd.mongodb.net/?retryWrites=true&w=majority")
 db = client['ShopWIse']
-collection = db["crepdogcrew"]
+collection = db["sneakers"]
 n=collection.count_documents({})
 
 #chrome options 
@@ -114,6 +114,7 @@ for children in search:
                     'PriceHistory':pricehistory,
                     'Product Url': product_url[len(product_url)-1],
                     'Image Url':image_url[len(image_url)-1],
+                    'Store':'crepdogcrew'
                     
                 }
           documents.append(document)

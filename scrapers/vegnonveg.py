@@ -52,7 +52,7 @@ options.add_argument('--window-size=1920x1480')
 #mongdb
 client = pymongo.MongoClient("mongodb+srv://jairajani:jairajani@shopwise.6twmxrd.mongodb.net/?retryWrites=true&w=majority")
 db = client['ShopWIse']
-collection = db["veg_nonveg"]
+collection = db["sneakers"]
 n=collection.count_documents({})
 
 
@@ -123,6 +123,7 @@ for children in search:
               'PriceHistory':pricehistory,
               'Product Url': product_url[len(product_url)-1],
               'Image Url':image_url[len(image_url)-1],
+              'Store':'vegnonveg'
               
           }
       documents.append(document)
@@ -132,7 +133,7 @@ for children in search:
 driver.quit()
 print(j)
 
-if(len(documents)>0 and j>=651):
+if(len(documents)>0 and j>=639):
     collection.insert_many(documents)
     print('Uploaded')
 else:

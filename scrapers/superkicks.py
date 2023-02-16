@@ -38,7 +38,8 @@ j=0
 #mongodb database
 client = pymongo.MongoClient("mongodb+srv://jairajani:jairajani@shopwise.6twmxrd.mongodb.net/?retryWrites=true&w=majority")
 db = client['ShopWIse']
-collection = db["super_kicks"]
+#collection = db["super_kicks"]
+collection = db["sneakers"]
 n=collection.count_documents({})
 
 
@@ -118,6 +119,7 @@ for url in urls:
                 'PriceHistory':pricehistory,
                 'Product Url': product_url[len(product_url)-1],
                 'Image Url':image_url[len(image_url)-1],
+                'Store':'superkicks'
                 
             }
             documents.append(document)
